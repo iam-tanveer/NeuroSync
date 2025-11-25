@@ -3,15 +3,8 @@ train_model.py
 
 This script trains a Random Forest classifier on the 60-second
 .npz files located in the /data subfolders.
-
-... (script description) ...
-
-** CHANGELOG (v5) **
--   Made the data loader even more robust.
--   If 'sampling_rates' key is missing, it prints a warning
-    and assumes the standard defaults (e.g., 256 Hz for EEG)
-    instead of skipping the file.
 """
+
 import numpy as np
 import os
 import joblib
