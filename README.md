@@ -79,3 +79,23 @@ To run this project locally, you will need a Muse 2 Headband and a Bluetooth-ena
    ```bash
    git clone [https://github.com/iam-tanveer/NeuroSync.git](https://github.com/iam-tanveer/NeuroSync.git)
    cd NeuroSync
+
+2. **Start the Backend**
+   ```bash
+   cd mock-backend
+   pip install -r requirements.txt
+   python api_connected.py
+
+3. **Start the Frontend**
+    ```bash
+    cd wellbeing-ui
+    npm install
+    npm run dev
+
+4. **Connect Device** Ensure your Muse 2 is in pairing mode and run the stream script:
+     ```bash
+     muselsl stream
+
+---
+
+<div align="center"> <p><i>Built with 🧠 at NatHacks</i></p> </div>
