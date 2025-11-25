@@ -1,87 +1,81 @@
 # 🧠 NeuroSync: Real-time Focus & Stress Management
 
-NeuroSync is a real-time neurofeedback platform that leverages data from the **Muse 2 EEG headband** to help students improve focus and manage stress, while providing valuable analytics for instructors and classrooms.
+<!-- HERO IMAGE: Replace 'screenshot1.png' with your best looking dashboard image -->
+<div align="center">
+  <img src="data/storyboard_neurosync.png" alt="NeuroSync Dashboard Main View" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+  <br>
+  <br>
+  <p>
+    <b>A real-time neurofeedback platform leveraging the Muse 2 EEG headband to optimize student focus and instructor insights.</b>
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/Frontend-React-61DAFB?style=flat-square&logo=react&logoColor=black" />
+    <img src="https://img.shields.io/badge/Backend-Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/AI-Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" />
+    <img src="https://img.shields.io/badge/Hardware-Muse_2-blue?style=flat-square" />
+  </p>
+</div>
 
-Our backend processes raw brainwave data, uses machine learning to classify the user's mental state (Focus, Stress, Calmness), and provides instant feedback to our frontend applications.
+---
 
-## 🚀 How It Works
+## 📖 Overview
 
-The core data flow of NeuroSync is as follows:
+**NeuroSync** bridges the gap between biological signals and digital learning environments. By processing raw brainwave data, we use machine learning to classify a student's mental state (Focus, Stress, Calmness) in real-time, providing immediate feedback loops to help students get back in "the zone" and giving instructors invisible insights into classroom engagement.
 
-1. **Data Acquisition:** The application securely connects to a user's Muse 2 headband to stream raw EEG data.
+## 📸 Interface & Features
 
-2. **Backend Processing:** Our backend ingests this high-frequency data stream, cleans it, and performs feature extraction.
+<!-- FEATURE IMAGES: Replace filenames with your other 2 screenshots -->
+### 1. The Student Dashboard
+<img src="data/student_dashboard.png" alt="Student Dashboard" width="100%">
 
-3. **ML Classification:** A trained machine learning model analyzes the processed data in real-time to classify the user's state, outputting probabilities for **Focus**, **Stress**, and **Calmness**.
+**For Improving Personal Focus:**
+* **🎧 Adaptive Audio Feedback:** Intelligently layers binaural beats over ambient sounds when focus scores drop below baseline.
+* **💡 Proactive Coaching:** Detects high stress and suggests 1-minute breathing exercises.
+* **🧘 Focus Trainer:** Gamified mode to practice keeping real-time focus scores above a target threshold.
+* **📊 Personal Analytics:** detailed breakdown of peak focus times and effective study durations.
 
-4. **Frontend Feedback:** The classified data is sent immediately to the frontend, allowing the UI to adapt and provide real-time interventions and visualizations.
+### 2. The Instructor Dashboard
+<img src="data/instructor_dashboard.png" alt="Instructor Dashboard" width="100%">
 
-5. **Analytics:** All session data is stored to power rich analytics dashboards for both students and instructors.
+**For Understanding Classroom Engagement:**
+* **🌡️ Class Focus Meter:** Anonymized, aggregated real-time view of the entire room's mental state.
+* **😟 Stress Detection:** Identifies specific lecture moments that caused widespread confusion or anxiety.
+* **📈 Longitudinal Analysis:** Tracks engagement trends over the semester to identify challenging course material.
 
-## ✨ Key Features
+---
 
-NeuroSync provides two distinct interfaces: one for students to manage their personal study sessions and one for instructors to monitor classroom engagement.
+## 🚀 System Architecture
 
-### For Students (Improving Personal Focus)
+The core data flow of NeuroSync operates in a low-latency loop:
 
-* **🎧 Adaptive Audio Feedback:**
-  While studying with ambient sounds, the app intelligently layers in binaural beats to enhance focus only when the user's focus score drops below their baseline.
+1.  **Data Acquisition:** Secure connection to the Muse 2 headband via Bluetooth (BLE) to stream raw EEG data.
+2.  **Backend Processing:** Python backend ingests high-frequency streams, applying noise filters and feature extraction (Alpha/Beta/Theta waves).
+3.  **ML Classification:** A trained Scikit-learn model classifies the user's state in real-time.
+4.  **Frontend Feedback:** React UI receives data via WebSockets for instant visualization.
 
-* **💡 Proactive Popup Tips:**
-  The app acts as a personal coach. If high stress is detected, it might suggest a 1-minute breathing exercise. If focus is low, it can provide a quick focus-training tip.
+## 🛠️ Tech Stack
 
-* **📊 Personal Analytics Dashboard:**
-  Users can review past study sessions to discover powerful insights, such as:
-
-  * What time of day are they most focused?
-
-  * How long were their most effective study blocks?
-
-  * Did their focus scores improve after performing a guided breathing exercise?
-
-* **🧘 Focus Trainer:**
-  A dedicated mode where users practice keeping their real-time focus score (visualized as a bar) above a target threshold, with tips and rewards to gamify the experience.
-
-* **🌬️ Guided Meditation Visualizer:**
-  A simple, full-screen visualizer where a circle expands and contracts, guiding the user through a breath meditation pattern to help them calm down or reset.
-
-### For Instructors & Classrooms (Understanding Engagement)
-
-* **Real-time Class Dashboard:**
-
-  * **🌡️ Class Focus Meter:** An aggregated, anonymous meter showing the overall focus level of the entire class.
-
-  * **😟 Class Stress Level:** See if a particular topic or announcement is causing widespread stress or confusion.
-
-  * **📊 Anonymized State Distribution:** A pie or bar chart showing the percentage of the class in a "Focus," "Stress," or "Calm" state.
-
-* **Post-Class Analytics:**
-
-  * **📈 Session Engagement Timeline:** See a graph of the class's focus over the entire lecture. This can reveal key moments where engagement was lost (e.g., "Focus dropped 15 minutes in, right when we switched to Topic B").
-
-  * **📚 Longitudinal Course Analysis:** Track focus metrics over the entire semester to see a topic-by-topic breakdown, helping instructors refine challenging course material.
-
-## 🛠️ Tech Stack (Example)
-
-Please replace these with your project's actual technologies.
-
-| **Component** | **Technology** | **Description** | 
+| Component | Technology | Description |
 | :--- | :--- | :--- |
-| **Hardware** | Muse 2 | EEG Headband for data acquisition. | 
-| **Backend** | `[e.g., Python, Node.js]` | Handles data processing, ML, and API endpoints. | 
-| **ML/Data** | `[e.g., scikit-learn, TensorFlow]` | Used for training and deploying the classification model. | 
-| **Database** | `[e.g., PostgreSQL, InfluxDB]` | Stores user data and time-series session analytics. | 
-| **Frontend** | `[e.g., React, Vue.js]` | Powers the student and instructor dashboards. | 
-| **Real-time** | `[e.g., WebSockets, Socket.IO]` | Pushes live data from the backend to the frontend. | 
+| **Hardware** | **Muse 2** | EEG Headband for raw data acquisition (4-channel). |
+| **Frontend** | **React.js** | Interactive dashboard for data visualization. |
+| **Backend** | **Python** | Signal processing and API management. |
+| **ML Engine** | **Scikit-learn** | Random Forest classifier for mental state detection. |
+| **Real-time** | **WebSockets** | Low-latency data streaming from Python to React. |
+| **Data Viz** | **Chart.js / D3** | Rendering live EEG waveforms and focus graphs. |
 
 ## 💻 Local Development Setup
 
+To run this project locally, you will need a Muse 2 Headband and a Bluetooth-enabled machine.
+
 ### Prerequisites
+* Node.js v18+
+* Python 3.10+
+* Muse LSL (Lab Streaming Layer)
 
-* `[e.g., Node.js v18+]`
+### Installation
 
-* `[e.g., Python 3.10+]`
-
-* `[e.g., PostgreSQL]`
-
-* A Muse 2 Headband
+1. **Clone the repo**
+   ```bash
+   git clone [https://github.com/iam-tanveer/NeuroSync.git](https://github.com/iam-tanveer/NeuroSync.git)
+   cd NeuroSync
